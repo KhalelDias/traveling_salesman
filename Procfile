@@ -1,1 +1,1 @@
-web gunicorn distances.wsgi --log-file-
+web gunicorn distances.wsgi --log-file -
