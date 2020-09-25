@@ -25,7 +25,7 @@ CITY_CHOICES = [
 
 
 class CitiesForm(forms.Form):
-    dep = forms.CharField(widget=forms.RadioSelect(choices=CITY_CHOICES), label="Выберите город отлета")
+    dep = forms.CharField(widget=forms.RadioSelect(choices=CITY_CHOICES), label="Выберите город вылета")
     dest = forms.CharField(widget=forms.CheckboxSelectMultiple(choices=CITY_CHOICES), label='Выберите города для визита')
 
     class Meta:
