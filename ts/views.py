@@ -1,3 +1,4 @@
+from django.core.exceptions import ValidationError
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
 
@@ -12,6 +13,8 @@ def index(request):
         form = CitiesForm(request.POST)
         dep_city = form.data['dep']
         dest_cities = request.POST.getlist('dest')
+        if(len(dest_cities) > 6):
+            return redirect('/')
         print('dep_city is ' + str(dep_city))
         print('dest_cities ' + str(dest_cities))
         dest_cities.append(dep_city)
@@ -20,7 +23,7 @@ def index(request):
         return render(request, 'ts/dests.html', {'paths': paths})
     else:
         form = CitiesForm()
-    return render(request, 'ts/all_cities.html', {'form': form})
+    return render(request, 'ts/all_cities.html', {'form': form, 'caution': 'Выберите не больше 6-ти городов'})
 
 
 def url(request):
