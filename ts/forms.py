@@ -1,5 +1,7 @@
 from django import forms
 
+from ts.models import Url
+
 CITY_CHOICES = [
     ('Nursultan', 'Нұр-сұлтан'),
     ('Almaty', 'Алматы'),
@@ -28,3 +30,12 @@ class CitiesForm(forms.Form):
 
     class Meta:
         exclude = ()
+
+
+class UrlForm(forms.ModelForm):
+    class Meta:
+        model = Url
+        fields = ['long_url']
+        labels = {
+            'long_url': 'Введите URL'
+        }
