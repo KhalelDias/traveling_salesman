@@ -18,7 +18,7 @@ CITY_CHOICES = [
     ('Kyzylorda', 'Қызылорда'),
     ('Aktau', 'Ақтау'),
     ('Pavlodar', 'Павлодар'),
-    ('Petropavl', 'Петропавл'),
+    ('Petropavlovsk', 'Петропавл'),
     ('Turkestan', 'Түркістан'),
     ('Semey', 'Семей'),
 ]
