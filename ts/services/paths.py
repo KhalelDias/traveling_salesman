@@ -88,6 +88,10 @@ def get_paths(dep, dests):
     }
     distances = []
     sq = 0
+    if len(dests)<1:
+        return [{'dist': 0, 'path': dep + ' -> ' + dep}]
+    if len(dests) == 1 and dep in dests:
+        return [{'dist': 0, 'path': dep + ' -> ' + dep}]
     for idx, city in enumerate(dests):
         if city == dep:
             sq = idx
